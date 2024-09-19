@@ -17,9 +17,20 @@ function registerQuestion(question, answer, answer1, answer2){
 }
 
 function answer1(){
+    if (arrayPos == 0){
+        arrayPos = 1;
+        registerQuestion("Test-Frage", "A", "A", "B");
+        return false;
+    }
+
     document.getElementById("div").innerHTML = idArray + questionArray + answerArray + answer1Array + answer2Array;
 }
 
 function answer2(){
-    registerQuestion("Test-Frage", "A", "A", "B");
+    if (arrayPos == 0){
+        arrayPos = 1;
+        registerQuestion("Test-Frage", "A", "A", "B");
+        return false;
+    }
+    
 }
