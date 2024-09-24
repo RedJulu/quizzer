@@ -48,12 +48,12 @@ function answer1() {
         // Show question
         document.getElementById("div").innerHTML = questionArray[arrayPos];
         return false;
-    } else {
-        if (getRightAnswer(arrayPos) == getAnswer1(arrayPos)) {
-            document.getElementById("div").innerHTML = "YUP!";
+    }
+    if (getRightAnswer(arrayPos) == getAnswer1(arrayPos)) {
+        document.getElementById("div").innerHTML = "YUP!";           
         } else {
-            document.getElementById("div").innerHTML = "Nah! D;";
-        }
+        document.getElementById("div").innerHTML = "Nah! D;";
+    }
 
         arrayPos = arrayPos + 1;
 
@@ -61,8 +61,8 @@ function answer1() {
             return false;
         }
 
-        document.getElementById("div").innerHTML = questionArray[arrayPos];
-    }
+        //document.getElementById("div").innerHTML = questionArray[arrayPos];
+    
 }
 
 function answer2() {
@@ -76,12 +76,12 @@ function answer2() {
         // Show question
         document.getElementById("div").innerHTML = questionArray[arrayPos];
         return false;
-    } else {
-        if (getRightAnswer(arrayPos) == getAnswer2(arrayPos)) {
-            document.getElementById("div").innerHTML = "YUP!";
+    }
+    if (getRightAnswer(arrayPos) == getAnswer2(arrayPos)) {
+        document.getElementById("div").innerHTML = "YUP!";           
         } else {
-            document.getElementById("div").innerHTML = "Nah! D;";
-        }
+        document.getElementById("div").innerHTML = "Nah! D;";
+    }
 
         arrayPos = arrayPos + 1;
 
@@ -89,6 +89,6 @@ function answer2() {
             return false;
         }
 
-        document.getElementById("div").innerHTML = questionArray[arrayPos];
-    }
+        //document.getElementById("div").innerHTML = questionArray[arrayPos];
+    
 }
