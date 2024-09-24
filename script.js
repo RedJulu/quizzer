@@ -1,6 +1,8 @@
 arrayPos = -1;
 startId = -1;
 
+points = 0;
+
 idArray = [];
 questionArray = [];
 answerArray = [];
@@ -37,23 +39,38 @@ function getAnswer2(id) {
     }
 }
 
-function answer1() {
-    if (arrayPos == -1) {
+function startGame() {
+    
         arrayPos = 0;
 
         // Register questions
-        registerQuestion("Test-Frage", "A", "A", "B");
-        registerQuestion("Test-Frage2", "A", "A", "B");
+        registerQuestion("Wer ist doof", "Linus", "Linus", "Julian");
 
         // Show question
         document.getElementById("div").innerHTML = questionArray[arrayPos];
-        return false;
-    }
-    if (getRightAnswer(arrayPos) == getAnswer1(arrayPos)) {
-        document.getElementById("div").innerHTML = "YUP!";           
+        document.querySelector('#btn1').innerHTML = answer1Array[arrayPos];
+        document.querySelector('#btn2').innerHTML = answer2Array[arrayPos];
+    
+}
+
+function isRightAnswer(userInput, rightAnswer){
+    if (rightAnswer == userInput) {
+        document.getElementById("div").innerHTML = "YUP!";     
+        points++;      
+        
         } else {
         document.getElementById("div").innerHTML = "Nah! D;";
     }
+}
+
+function answer1() {
+
+    if (arrayPos == -1) {
+    startGame();
+    return false;
+    }
+    
+    isRightAnswer(getAnswer1(arrayPos), getRightAnswer(arrayPos));
 
         arrayPos = arrayPos + 1;
 
@@ -66,22 +83,13 @@ function answer1() {
 }
 
 function answer2() {
+
     if (arrayPos == -1) {
-        arrayPos = 0;
-
-        // Register questions
-        registerQuestion("Test-Frage", "A", "A", "B");
-        registerQuestion("Test-Frage2", "A", "A", "B");
-
-        // Show question
-        document.getElementById("div").innerHTML = questionArray[arrayPos];
-        return false;
+    startGame();
+    return false;
     }
-    if (getRightAnswer(arrayPos) == getAnswer2(arrayPos)) {
-        document.getElementById("div").innerHTML = "YUP!";           
-        } else {
-        document.getElementById("div").innerHTML = "Nah! D;";
-    }
+
+    isRightAnswer(getAnswer2(arrayPos), getRightAnswer(arrayPos));
 
         arrayPos = arrayPos + 1;
 
