@@ -39,6 +39,12 @@ function getAnswer2(id) {
     }
 }
 
+function nextQuestion(arrayPos){
+        document.getElementById("question").innerHTML = questionArray[arrayPos];
+        document.querySelector('#btn1').innerHTML = answer1Array[arrayPos];
+        document.querySelector('#btn2').innerHTML = answer2Array[arrayPos];
+}
+
 function startGame() {
     
         arrayPos = 0;
@@ -55,11 +61,10 @@ function startGame() {
 
 function isRightAnswer(userInput, rightAnswer){
     if (rightAnswer == userInput) {
-        document.getElementById("question").innerHTML = "YUP!";     
         points++;      
-        
+        nextQuestion(arrayPos);
         } else {
-        document.getElementById("question").innerHTML = "Nah! D;";
+        nextQuestion(arrayPos);
     }
 }
 
