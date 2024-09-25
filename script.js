@@ -47,7 +47,7 @@ function startGame() {
         registerQuestion("Wer ist doof", "Linus", "Linus", "Julian");
 
         // Show question
-        document.getElementById("div").innerHTML = questionArray[arrayPos];
+        document.getElementById("question").innerHTML = questionArray[arrayPos];
         document.querySelector('#btn1').innerHTML = answer1Array[arrayPos];
         document.querySelector('#btn2').innerHTML = answer2Array[arrayPos];
     
@@ -55,11 +55,11 @@ function startGame() {
 
 function isRightAnswer(userInput, rightAnswer){
     if (rightAnswer == userInput) {
-        document.getElementById("div").innerHTML = "YUP!";     
+        document.getElementById("question").innerHTML = "YUP!";     
         points++;      
         
         } else {
-        document.getElementById("div").innerHTML = "Nah! D;";
+        document.getElementById("question").innerHTML = "Nah! D;";
     }
 }
 
@@ -78,7 +78,7 @@ function answer1() {
             return false;
         }
 
-        //document.getElementById("div").innerHTML = questionArray[arrayPos];
+       
     
 }
 
@@ -97,6 +97,6 @@ function answer2() {
             return false;
         }
 
-        //document.getElementById("div").innerHTML = questionArray[arrayPos];
+        
     
 }
